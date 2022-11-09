@@ -1,0 +1,101 @@
+
+/* Grid layout setup og posisjoner ofr elementene på siden*/
+body {
+    display: grid;
+    grid-template-columns: auto 600px 200px auto;
+    grid-template-rows: 70px auto;
+  }
+
+  header {
+    grid-column: 2/3;
+    grid-row: 1/1;
+    font-size: 2.2em;
+  }
+  
+  nav {
+    grid-column: 3/3;
+    grid-row: 2/2;
+  }
+  
+  body>section {
+    grid-column: 2/2;
+    grid-row: 2/2;
+  }
+  
+  /* at man ikke ser den irriterende priken i listene */
+  nav li {
+    list-style-type: none;
+  }
+  li {
+    list-style: none;
+  }
+  
+  /* Nav styling */
+  nav a {
+    background-color: #eee;
+      color: black; 
+      display: block; 
+      padding: 12px;
+      text-decoration: none;
+  }
+  
+  nav a:hover {
+    background-color: #ccc;  
+  }
+  
+  nav a.active {
+    background-color: #4CAF50; 
+    color: white;
+  }
+
+  /*Body og de tingen som gør at den funker som den skal*/
+  body>section>section {
+    display: none;
+  }
+  
+  body>section>section.active {
+    display: block;
+  }
+
+  /* Tabel style*/
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  th ,td {
+    margin:2px;
+    padding: 5px;
+    text-align: center;
+  
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px transparent darkgrey;
+  }
+
+
+label{
+  padding: 7px;
+}
+
+input{
+  margin: 4px
+}
+.slideshow {
+  /* en DIV med denne klassen inneholder slideshowet.
+  */
+  position:relative;
+  width: 500px;
+  height: 500px;
+}
+ /* map størelse og ting
+  */
+
+#mapid {
+  height: 400px;
+  width: 400px;
+  outline: solid black 1px;
+}
+

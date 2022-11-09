@@ -1,0 +1,17 @@
+[
+    {
+      "html": "Forside",
+      "id": "start-side",
+      "scriptsrc": "js/classes/slideshow.js" 
+    },
+    {
+      "html": "legg til Kontakt",
+      "id": "addKontakt",
+      "scriptsrc": "js/addKontakt.js"
+    },
+    {
+      "html": "Kontakt liste",
+      "id": "klisteSection",
+      "scriptsrc": "js/kontaktList.js"
+    }
+  ]

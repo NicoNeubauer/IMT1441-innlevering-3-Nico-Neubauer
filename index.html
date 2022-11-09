@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Velkommen</title>
+  <link rel="stylesheet" href="css/oppgave3.css"> <!--CSS slikt at den er litt finere å se på-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>  <!--denne style tagen er til kartet-->
+</head>
+<body>
+    <header>Prosjekt 3 Nico N</header>
+    <nav>
+        <ul>
+        </ul>
+    </nav>
+    <section>
+        <section id="start-side" class="active">
+            <!--Dette er "Start siden" og informasjonen som befinnder seg på den--> 
+            <h2>Velkommen til mitt prosjekt 3 med slideshow</h2>
+            <p>
+                Dette er igjen en en Single Page Application, men litt forbedret fra forrige gang. 
+                Denne gangen ønsker vi at om en bruker laster siden på nytt så skal han/hun fortsette 
+                å være på samme side som når vedkommende trykket på reload.
+            </p>
+            <p>
+                Dette er starten på et online kontaktregister, kontaktene lagres via
+                <a href="http://folk.ntnu.no/oeivindk/imt1441/storage">http://folk.ntnu.no/oeivindk/imt1441/storage/</a>.
+
+            </p>
+            <p>
+                Siden “Søk kontakt” gir muligheten til å søke på kontakter mens”Legg til kontakt” benyttes 
+                for å legge til kontakter. 
+             </p>
+        <div class="slideshow"></div> <!-- hær legger jeg slideshowet-->
+        </section>
+        <section id="addKontakt">
+            <!--Denne delen er til ny kontakt siden. Ting har id at det er lett og adressere de i java skript filen--> 
+            <div>
+                <!-- bruker (onsubmit="javascript: return false") for å ikke relode siden-->
+                <h2>Legg til kontakt</h2>
+                <form onsubmit="javascript: return false">
+                    <label for="inputfor1">Fornavn: </label>
+                        <input type="text" id=inputfor1><br>
+                    <label for="inputett1">Etternavn: </label>
+                        <input type="text" id=inputett1><br>
+                  <label for="inputep1">Epost: </label>
+                      <input type="text" id=inputep1><br>
+                <label for="inputT1">Tlf: </label>
+                    <input type="text" id=inputT1><br>
+                    <label for="inputg1">Gate: </label>
+                        <input type="text" id=inputg1><br>
+                    <label for="inputP1">Postnummer: </label>
+                        <input type="text" id=inputP1><br>
+                    <label for="inputS1">Sted: </label>
+                        <input type="text" id=inputS1>
+                </form>
+            </form>
+            <button>legg til</button>
+          </form>          
+      </div>
+            </section>
+        <section id="klisteSection"> <h2>Kontakter Liste</h2> <!--Kontakt liste -->
+            <p>
+              </p>
+              <p><input type="text" id="search"></p> <!--søkefeltet-->
+              <div id="kontakt1">  <!--diven hvor lista genereres-->
+                <table id="infotabel">
+                    <thead>
+                        <th>First Name</th> <th>Last Name</th> <th>Email</th> <th>TLF</th> <th>Gate</th> <th>Postnummer</th> <th>Sted</th> 
+                    </thead>
+                    <tbody id="table1">  <!--deler den i tabel head and body for at headen er dynamisk og at det er lettere å ha den i HTML koden-->
+                    </tbody>
+                </table> 
+            <p>søk og tryk på en kontakt for å redigere den </p>
+        <form onsubmit="javascript: return false">
+            <label for="inputfor2">Fornavn  : </label>
+                <input type="text" id=inputfor2><br>
+            <label for="inputett2">Etternavn: </label>
+                <input type="text" id=inputett2><br>
+            <label for="inputep2">Epost: </label>
+                  <input type="text" id=inputep2><br>                      
+            <label for="inputT2">TLF: </label>
+                <input type="text" id=inputT2><br>                      
+            <label for="inputg2">Gate: </label>
+                <input type="text" id=inputg2><br>                      
+            <label for="inputP2">Postnummer: </label>
+                <input type="text" id=inputP2><br>                      
+            <label for="inputS2">Sted: </label>
+                <input type="text" id=inputS2>
+        </form>
+        <button id="edit">edit</button>
+        <div id=p2></div>
+        <div id="mapid"></div> 
+              </div>
+        </section>
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+        integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+        crossorigin=""></script>
+        <script src="js/map.js"></script>  <!--styre kartet tenkte at det hadde vert bedre om den ikke hadde blit lastet 
+        inn unasett men fikk ikke til en annen løsning går sikkert med å fikse på menu.js-->
+        <script src="js/menu.js"></script>
+        <!--main js Den er nederst siden jeg trenger at DOMen er satt på plass før den gjør ting-->
+    </section>
+</body>
